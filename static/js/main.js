@@ -158,7 +158,7 @@
    const numberOfRepositories = 5;
  
    // Fetch repositories
-   fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=${numberOfRepositories}`)
+   fetch(`http://api.github.com/users/${username}/repos?sort=updated&per_page=${numberOfRepositories}`)
    .then(response => response.json())
      .then(repositories => {
        const repositoriesContainer = document.getElementById('repositories');
