@@ -424,3 +424,18 @@ section {
     padding-right: 20px 15px;
   }
 }
+.card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.repo-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}

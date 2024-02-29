@@ -152,4 +152,34 @@
    */
   new PureCounter();
 
+
+   // GitHub username
+   const username = 'ankurbelbase';
+   const numberOfRepositories = 5;
+ 
+   // Fetch repositories
+   fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=${numberOfRepositories}`)
+   .then(response => response.json())
+     .then(repositories => {
+       const repositoriesContainer = document.getElementById('repositories');
+       repositories.forEach(repo => {
+         const card = document.createElement('div');
+         card.classList.add('card');
+ 
+         const repoLink = document.createElement('a');
+         repoLink.href = repo.html_url;
+         repoLink.textContent = repo.full_name;
+         repoLink.classList.add('repo-link');
+         repoLink.setAttribute('target', '_blank');
+         repoLink.setAttribute('rel', 'noopener noreferrer');
+ 
+         card.appendChild(repoLink);
+         repositoriesContainer.appendChild(card);
+       });
+     })
+     .catch(error => {
+       console.error('Error fetching repositories:', error);
+     });
+
+
 })()
